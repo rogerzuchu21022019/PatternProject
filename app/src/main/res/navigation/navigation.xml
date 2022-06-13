@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/bookManageFM">
+
+    <fragment
+        android:id="@+id/bookManageFM"
+        android:name="nam.zuchu.patternproject.framents.books.BookManageFM"
+        android:label="Book"
+        tools:layout="@layout/fragment_book_manage" >
+        <action
+            android:id="@+id/action_bookManageFM_to_addBookFM"
+            app:destination="@id/addBookFM" />
+        <action
+            android:id="@+id/action_bookManageFM_to_detailBookFM"
+            app:destination="@id/detailBookFM" />
+        <argument
+            android:name="book"
+            app:argType="nam.zuchu.patternproject.database.entities.Book" />
+    </fragment>
+    <fragment
+        android:id="@+id/borrowCardsManageFM"
+        android:name="nam.zuchu.patternproject.framents.borrowcards.BorrowCardsManageFM"
+        android:label="Borrow Cards"
+        tools:layout="@layout/fragment_borrow_cards_manage" >
+        <action
+            android:id="@+id/action_borrowCardsManageFM_to_detailBorrowingCardFM"
+            app:destination="@id/detailBorrowingCardFM" />
+        <action
+            android:id="@+id/action_borrowCardsManageFM_to_addBorrowCardFM"
+            app:destination="@id/addBorrowCardFM" />
+        <argument
+            android:name="card"
+            app:argType="nam.zuchu.patternproject.database.entities.BorrowCard" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBookFM"
+        android:name="nam.zuchu.patternproject.framents.books.AddBookFM"
+        android:label="Add Book"
+        tools:layout="@layout/fragment_add_book" >
+        <action
+            android:id="@+id/action_addBookFM_to_bookManageFM"
+            app:destination="@id/bookManageFM" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailBorrowingCardFM"
+        android:name="nam.zuchu.patternproject.framents.borrowcards.DetailBorrowingCardFM"
+        android:label="Detail Borrowing Card"
+        tools:layout="@layout/fragment_detail_borrowing" >
+        <action
+            android:id="@+id/action_detailBorrowingCardFM_to_borrowCardsManageFM"
+            app:destination="@id/borrowCardsManageFM"
+            app:popUpTo="@id/borrowCardsManageFM"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="card"
+            app:argType="nam.zuchu.patternproject.database.entities.BorrowCard" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailBookFM"
+        android:name="nam.zuchu.patternproject.framents.books.DetailBookFM"
+        android:label="Detail Book"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_detailBookFM_to_bookManageFM"
+            app:destination="@id/bookManageFM" />
+        <argument
+            android:name="book"
+            app:argType="nam.zuchu.patternproject.database.entities.Book" />
+    </fragment>
+    <fragment
+        android:id="@+id/staticFragment"
+        android:name="nam.zuchu.patternproject.framents.statics.StaticFragment"
+        tools:layout="@layout/fragment_static"
+        android:label="Static" >
+        <action
+            android:id="@+id/action_staticFragment_to_detailBorrowingCardFM"
+            app:destination="@id/detailBorrowingCardFM" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTypeFM"
+        android:name="nam.zuchu.patternproject.framents.typeofbook.AddTypeFM"
+        android:label="Add Type OF Book"
+        tools:layout="@layout/fragment_add_type" >
+        <action
+            android:id="@+id/action_addTypeFM_to_typeOfBookFM"
+            app:destination="@id/typeOfBookFM" />
+    </fragment>
+    <fragment
+        android:id="@+id/typeOfBookFM"
+        android:name="nam.zuchu.patternproject.framents.typeofbook.TypeOfBookFM"
+        android:label="Type Of Book"
+        tools:layout="@layout/fragment_type_of_book" >
+        <action
+            android:id="@+id/action_typeOfBookFM_to_addTypeFM"
+            app:destination="@id/addTypeFM"
+            app:popUpTo="@id/addTypeFM"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_typeOfBookFM_to_updateTypeFM"
+            app:destination="@id/updateTypeFM" />
+        <argument
+            android:name="type"
+            app:argType="nam.zuchu.patternproject.database.entities.TypeOfBook" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBorrowCardFM"
+        android:name="nam.zuchu.patternproject.framents.borrowcards.AddBorrowCardFM"
+        android:label="Add Borrow Card"
+        tools:layout="@layout/fragment_add_borrow_card" >
+        <action
+            android:id="@+id/action_addBorrowCardFM_to_borrowCardsManageFM"
+            app:destination="@id/borrowCardsManageFM"
+            app:popUpTo="@id/borrowCardsManageFM"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMemberFM"
+        android:name="nam.zuchu.patternproject.framents.members.AddMemberFM"
+        android:label="Add Member"
+        tools:layout="@layout/fragment_add_member" >
+        <action
+            android:id="@+id/action_addMemberFM_to_memberManageFM"
+            app:destination="@id/memberManageFM" />
+    </fragment>
+    <fragment
+        android:id="@+id/memberManageFM"
+        android:name="nam.zuchu.patternproject.framents.members.MemberManageFM"
+        android:label="Member Management"
+        tools:layout="@layout/fragment_member_manage" >
+        <action
+            android:id="@+id/action_memberManageFM_to_addMemberFM"
+            app:destination="@id/addMemberFM"
+            app:popUpTo="@id/memberManageFM"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="member"
+            app:argType="nam.zuchu.patternproject.database.entities.Member" />
+        <action
+            android:id="@+id/action_memberManageFM_to_updateMemberFM"
+            app:destination="@id/updateMemberFM" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFM"
+        tools:layout="@layout/fragment_change_password"
+        android:name="nam.zuchu.patternproject.framents.settings.ChangePasswordFM"
+        android:label="Change Password" >
+        <action
+            android:id="@+id/action_changePasswordFM_to_bookManageFM"
+            app:destination="@id/bookManageFM" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateMemberFM"
+        tools:layout="@layout/fragment_update_member"
+        android:name="nam.zuchu.patternproject.framents.members.UpdateMemberFM"
+        android:label="My Information" >
+        <action
+            android:id="@+id/action_updateMemberFM_to_memberManageFM"
+            app:destination="@id/memberManageFM" />
+        <argument
+            android:name="member"
+            app:argType="nam.zuchu.patternproject.database.entities.Member" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateTypeFM"
+        android:name="nam.zuchu.patternproject.framents.typeofbook.UpdateTypeFM"
+        tools:layout="@layout/fragment_update_type"
+        android:label="Detail Type" >
+        <action
+            android:id="@+id/action_updateTypeFM_to_typeOfBookFM"
+            app:destination="@id/typeOfBookFM" />
+        <argument
+            android:name="type"
+            app:argType="nam.zuchu.patternproject.database.entities.TypeOfBook" />
+    </fragment>
+</navigation>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="card"
+            type="nam.zuchu.patternproject.database.entities.BorrowCard" />
+
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:id="@+id/view"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/lnTitle"
+                app:layout_constraintStart_toStartOf="@id/civAvatar"
+                android:background="@color/primary"
+                tools:ignore="MissingConstraints" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civAvatar"
+                android:src="@drawable/book"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                tools:ignore="MissingConstraints" />
+            <LinearLayout
+                android:paddingStart="@dimen/_5sdp"
+                android:id="@+id/lnTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintTop_toTopOf="@id/civAvatar"
+                app:layout_constraintBottom_toBottomOf="@id/civAvatar"
+                app:layout_constraintStart_toEndOf="@id/civAvatar"
+
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvTitle3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create At" />
+                <TextView
+                    android:id="@+id/tvTitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tvTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Paid"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingStart="@dimen/_5sdp"
+                android:layout_width="0dp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/lnTitle"
+                app:layout_constraintTop_toTopOf="@id/civAvatar"
+                app:layout_constraintBottom_toBottomOf="@id/civAvatar"
+                app:layout_constraintEnd_toEndOf="@id/view"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvID"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="@{String.valueOf(card.idBorrowCard)}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCreateAt"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="@{card.createAt}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="@{card.status}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvTotalMoney"
+                    android:text="@{String.valueOf(card.totalPaid)}"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

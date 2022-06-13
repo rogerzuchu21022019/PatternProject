@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="member"
+            type="nam.zuchu.patternproject.database.entities.Member" />
+
+        <variable
+            name="clickItem"
+            type="nam.zuchu.patternproject.framents.members.ClickItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{()->clickItem.onClick(member)}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/custom_border"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tvSTTMember"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary"
+                android:text="@{String.valueOf(member.idMember)}"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintEnd_toStartOf="@id/tvMember"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tvMember"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_width="0dp"
+                android:inputType="textMultiLine"
+                android:layout_height="wrap_content"
+                android:text="@{member.fullname}"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvSTTMember"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+            <ImageView
+                android:id="@+id/ivPhone"
+                android:src="@drawable/phone"
+                app:layout_constraintStart_toStartOf="@id/tvSTTMember"
+                app:layout_constraintTop_toTopOf="@id/tvPhone"
+                app:layout_constraintBottom_toBottomOf="@id/tvPhone"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:text="@{member.phoneNumber,default = `0879175319`}"
+                android:textSize="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@id/tvSTTMember"
+                app:layout_constraintStart_toStartOf="@id/tvMember"
+
+                app:layout_constraintEnd_toEndOf="@id/tvMember"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

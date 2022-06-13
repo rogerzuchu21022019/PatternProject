@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="card"
+            type="nam.zuchu.patternproject.database.entities.BorrowCard" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_marginTop="@dimen/_8sdp"-->
+<!--            android:id="@+id/cslayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            android:background="@drawable/custom_border_nocolor"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/rvCards"-->
+<!--            android:layout_height="@dimen/_60sdp"-->
+<!--            tools:ignore="MissingConstraints">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvDay"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/_40sdp"-->
+<!--                android:text="Day"-->
+<!--                android:textSize="@dimen/_25sdp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.05"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:ignore="MissingConstraints" />-->
+
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                android:layout_marginBottom="@dimen/_10sdp"-->
+<!--                android:id="@+id/acbShowDay"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:background="@drawable/custom_border"-->
+<!--                android:drawableStart="@drawable/callender"-->
+<!--                android:hint="07/06/2022"-->
+<!--                android:text="@{card.createAt}"-->
+<!--                android:textSize="@dimen/_25sdp"-->
+<!--                android:paddingLeft="@dimen/_20sdp"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/tvDay"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                tools:ignore="MissingConstraints" />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCards"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:listitem="@layout/item_list_borrow_card" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:src="@drawable/add"
+            app:backgroundTint="@color/primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

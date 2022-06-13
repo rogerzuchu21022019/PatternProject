@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/bookManageFM"
+        android:icon="@drawable/home"
+        android:title="Book Manage"/>
+    <item android:id="@+id/borrowCardsManageFM"
+        android:icon="@drawable/cards"
+        android:title="Borrow Cards Manage"/>
+    <item android:id="@+id/typeOfBookFM"
+        android:icon="@drawable/type"
+        android:title="Type Of Book Manage"/>
+    <item android:id="@+id/memberManageFM"
+        android:icon="@drawable/person"
+        android:title="Member Manage"/>
+    <item android:title="Statistic">
+        <menu>
+            <item android:id="@+id/staticFragment"
+                android:icon="@drawable/statistic"
+                android:title="Statistic Manage"/>
+        </menu>
+    </item>
+    <item android:title="Settings">
+        <menu>
+            <item android:id="@+id/changePasswordFM"
+                android:icon="@drawable/change"
+                android:title="Change Password"/>
+
+            <item android:id="@+id/signOut"
+                android:icon="@drawable/logout"
+                android:title="SignOut"/>
+        </menu>
+    </item>
+
+
+</menu>
+
+
